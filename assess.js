@@ -6,56 +6,81 @@
 //  objects, and how inheritance might come into play if there are different types of
 //  stories or storytellers.
 
-
-class Storytelling{
- constructor( length,morallessons,agegroup,story){
-        this.length =length
-        this.story=story
-        this.morallessons =morallessons
-        this.agegroup =agegroup
- }
-     storys(){
-        return `the ${this.length}of the ${this.story}depend on the${this.agegroup}` 
+class Story {
+    constructor(length, moralLessons, ageGroup) {
+        this.length = length;
+        this.moralLessons = moralLessons;
+        this.ageGroup = ageGroup;
+    }
 }
 
-     }
-        
-
-class Storys extends Storytelling{
-    constructor( length,morallessons,agegroup,story,languages){
-        super(length,morallessons,agegroup,story,)
-      
-        this.languages=languages
-
+class Translator {
+    translate(story, language) {
+       this.story =story
+       this.language=language
+        return "Translated story";
     }
-    stori(){
-    if (story =="short" || story =="English")
-    return `the ${this.length}of the ${this.story}depend on the${this.agegroup}` 
 }
-   
-}   
-class StoryTeller extends Storytelling{
-    constructor(length,morallessons,agegroup,story,storteller){
-        super(length,morallessons,agegroup,story,)
-       
-        this.storteller=storteller
 
+class Folklore extends Story {
+    constructor(length, moralLessons, ageGroup, region) {
+        super(length, moralLessons, ageGroup);
+        this.region = region;
     }
-    stories(){
-        if (story =="short" || story =="English")
-        return `the ${this.length}of the ${this.story}depend on the${this.agegroup}` 
-    }
-
 }
-   
 
-const stories = new Storytelling("long","entertainment","the child","children")
-console.log(stories)
-const teller =new StoryTeller("mommy")
-console.log(teller.stori(""))
+class Mythology extends Story {
+    constructor(length, moralLessons, ageGroup, deity) {
+        super(length, moralLessons, ageGroup);
+        this.deity = deity;
+    }
+}
 
-console.log(this .stories)
+class StoryTeller {
+    constructor(name) {
+        this.name = name;
+    }
 
+    tellStory(story) {
+        this.story =story
+        return "Telling story";
+    }
+}
+
+class Grandparent extends StoryTeller {
+    constructor(name) {
+        super(name);
+    }
+
+    shareWisdom() {
+        return "Sharing wisdom to children";
+    }
+}
+
+class Storyteller extends StoryTeller {
+    constructor(name, experienceYears) {
+        super(name);
+        this.experienceYears = experienceYears;
+    }
+
+    entertain() {
+        return " audience listening";
+    }
+}
+
+
+const folklore = new Folklore("long", ["Learnind1", "Learning2"], "petter", "kenya");
+const translator = new Translator();
+const translatedStory = translator.translate(folklore, "English");
+console.log(translatedStory);
+
+const grandparent = new Grandparent("Gloria");
+const storytellingResult = grandparent.tellStory(folklore);
+console.log(storytellingResult);
+
+const professionalStoryteller = new Storyteller("mary", 8);
+const entertainment = professionalStoryteller.entertain();
+console.log(entertainment);
 
 
 
