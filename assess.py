@@ -6,36 +6,64 @@
 # objects, and how inheritance might come into play if there are different types of
 # stories or storytellers.
 
+class Story:
+    def __init__(self, length, morallessons, agegroup):
+        self.length = length
+        self.morallessons = morallessons
+        self.agegroup = agegroup
 
-class Storytelling:
-    def __int__(self, length,morallessons,agegroup,story):
-        self.length =length
-        self.story=story
-        self.morallessons =morallessons
-        self.agegroup =agegroup
-    def  storys(self):
-        print( f"the {self.length}of the {self.story}depend on the{self.agegroup}") 
+class Translator:
+    def translate(self, story, language):
+        self.story =story
+        self.language =language
+       
+        return f"the {self.story} is in {self.language}"
 
-class Storys(Storytelling):
-    def __init__(self, length,morallessons,agegroup,story,languages):
-           super.__init__(self, length,morallessons,agegroup,story,)
-           self.language=languages
-           if story =="short" and story =="English":
-             print( f"the {self.length}of the {self.story}depend on the{self.agegroup}") 
+class Folklore(Story):
+    def __init__(self, length, moral_lessons, age_group, region):
+        super().__init__(length, moral_lessons, age_group)
+        self.region = region
 
-class StoryTeller(Storytelling):
-     def __init__(self, length,morallessons,agegroup,story,storteller):
-           super.__init__(self, length,morallessons,agegroup,story,)
-           self.storyteller=storteller
-           if story =="short" and story =="English":
-             print( f"the {self.length}of the {self.story}depend on the{self.agegroup}" )
+class Mythology(Story):
+    def __init__(self, length, moral_lessons, age_group, deity):
+        super().__init__(length, moral_lessons, age_group)
+        self.deity = deity
+
+class StoryTeller:
+    def __init__(self, name):
+        self.name = name
+
+    def tell_story(self, story):
+        return "Telling story"
+
+class Grandparent(StoryTeller):
+    def __init__(self, name):
+        super().__init__(name)
+
+    def share_wisdom(self):
+        return "Sharing wisdom"
+
+class ProfessionalStoryteller(StoryTeller):
+    def __init__(self, name, experience_years):
+        super().__init__(name)
+        self.experience_years = experience_years
+
+    def entertain_audience(self):
+        return "Entertaining audience"
 
 
+folklore = Folklore("medium", ["Lesson 1", "Lesson 2"], "children", "West Africa")
+translator = Translator()
+translated_story = translator.translate(folklore, "French")
+print(translated_story)
 
-stories =Storytelling("long","entertainment","the child","children")
-print(stories)
+grandparent = Grandparent("John")
+storytelling_result = grandparent.tell_story(folklore)
+print(storytelling_result)
 
-
+professional_storyteller = ProfessionalStoryteller("Alice", 10)
+entertainment_result = professional_storyteller.entertain_audience()
+print(entertainment_result)
 
 # **African Cuisine:** You're creating a recipe app specifically for African cuisine.
 # The app needs to handle recipes from different African countries, each with its

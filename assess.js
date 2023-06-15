@@ -216,22 +216,64 @@ class Wildlife{
 // stages.
 
 class Music{
-    constructor(  ingredients,preparationtime,cookingmethod, nutritional,food){
-        this.ingredients =ingredients
-        this.preparationtime=preparationtime
-        this.cookingmethod =cookingmethod
-        this.nutritional=nutritional
-        this.food=food
+    constructor(  animals,diet,lifespan, migration,pattern){
+        this.animals =animals
+        this.diet=diet
+        this.lifespan=lifespan
+        this.migration=migration
+        this.pattern=pattern
     }
 
-        cooks(){
+        working(){
               
-            console.log(`the ${this.food} contaaint${this.ingredients} and take ${this.preparationtime} and ${this.cookingmethod} and has ${this.nutritional}`)   
+            console.log(`the ${this.animals} contaaint${this.lifespan} and take ${this.migration} and ${this.diet} and has ${this.pattern}`)   
             
    }
    
         }
-   
+
+        class Artist extends Music{
+            constructor(  animals,diet,lifespan, migration,pattern,species){
+                   super(  animals,diet,lifespan, migration,pattern)
+                   this.species=species
+                  
+               }
+               longhair(){
+               if ( `${this.hair}has ${this.lifespan} `)
+               console.log(`the ${this.food} contaaint${this.ingredients} is ${this.species}` )
+                
+           }
+              
+           }
+
+           class Performance extends Music{
+            constructor(  animals,diet,lifespan, migration,pattern,species){
+                   super(  animals,diet,lifespan, migration,pattern)
+                   this.species=species
+                  
+               }
+               longhair(){
+               if ( `${this.hair}has ${this.lifespan} `)
+               console.log(`the ${this.food} contaaint${this.ingredients} is ${this.species}` )
+                
+           }
+              
+           }
+           class Stage extends Music{
+            constructor(  animals,diet,lifespan, migration,pattern,species){
+                   super(  animals,diet,lifespan, migration,pattern)
+                   this.species=species
+                  
+               }
+               longhair(){
+               if ( `${this.hair}has ${this.lifespan} `)
+               console.log(`the ${this.food} contaaint${this.ingredients} is ${this.species}` )
+                
+           }
+              
+           }
+
+
 
 
 // Create a class called Product with attributes for name, price, and quantity.
@@ -239,7 +281,7 @@ class Music{
 // Create multiple objects of the Product class and calculate their total values.
 
 class product{
-    constructor(  ingredients,preparationtime,cookingmethod, nutritional,food){
+    constructor( ){
         this.ingredients =ingredients
         this.preparationtime=preparationtime
         this.cookingmethod =cookingmethod
