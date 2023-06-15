@@ -144,21 +144,68 @@ class Recipe{
 
 
 class Wildlife{
-    constructor(  ingredients,preparationtime,cookingmethod, nutritional,food){
-        this.ingredients =ingredients
-        this.preparationtime=preparationtime
-        this.cookingmethod =cookingmethod
-        this.nutritional=nutritional
-        this.food=food
+    constructor(  animals,diet,lifespan, migration,pattern){
+        this.animals =animals
+        this.diet=diet
+        this.lifespan=lifespan
+        this.migration=migration
+        this.pattern=pattern
     }
 
-        cooks(){
+        working(){
               
-            console.log(`the ${this.food} contaaint${this.ingredients} and take ${this.preparationtime} and ${this.cookingmethod} and has ${this.nutritional}`)   
+            console.log(`the ${this.animals} contaaint${this.lifespan} and take ${this.migration} and ${this.diet} and has ${this.pattern}`)   
             
    }
    
         }
+
+        class Species extends Wildlife{
+            constructor(  animals,diet,lifespan, migration,pattern,species){
+                   super(  animals,diet,lifespan, migration,pattern)
+                   this.species=species
+                  
+               }
+               longhair(){
+               if ( `${this.hair}has ${this.lifespan} `)
+               console.log(`the ${this.food} contaaint${this.ingredients} is ${this.species}` )
+                
+           }
+              
+           }
+
+           class Predator extends Wildlife{
+            constructor(  animals,diet,lifespan, migration,pattern,species){
+                   super(  animals,diet,lifespan, migration,pattern)
+                   this.species=species
+                  
+               }
+               longhair(){
+               if ( `${this.hair}has ${this.lifespan} `)
+               console.log(`the ${this.food} contaaint${this.ingredients} is ${this.species}` )
+                
+           }
+              
+           }
+           class Prey extends Wildlife{
+            constructor(  animals,diet,lifespan, migration,pattern,species){
+                   super(  animals,diet,lifespan, migration,pattern)
+                   this.species=species
+                  
+               }
+               longhair(){
+               if ( `${this.hair}has ${this.lifespan} `)
+               console.log(`the ${this.food} contaaint${this.ingredients} is ${this.species}` )
+                
+           }
+              
+           }
+
+
+
+           
+
+
 
 // **African Music Festival:** You're in charge of organizing a Pan-African music
 // festival. Many artists from different countries, each with their own musical style
