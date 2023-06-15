@@ -135,6 +135,146 @@ class Recipe{
    const cookies=new MoroccanRecipe("yummy")
    console.log(cookies)
    
+//**Wildlife Preservation:** You're a wildlife conservationist working on a
+//  program to track different species in a national park. Each species has its own
+//  characteristics and behaviors, such as its diet, typical lifespan, migration
+//  patterns, etc. Some species might be predators, others prey. You'll need to
+//  create classes to model `Species`, `Predator`, `Prey`, etc., and think about how
+//  these classes might relate to each other through inheritance.
+
+
+class Wildlife{
+    constructor(  ingredients,preparationtime,cookingmethod, nutritional,food){
+        this.ingredients =ingredients
+        this.preparationtime=preparationtime
+        this.cookingmethod =cookingmethod
+        this.nutritional=nutritional
+        this.food=food
+    }
+
+        cooks(){
+              
+            console.log(`the ${this.food} contaaint${this.ingredients} and take ${this.preparationtime} and ${this.cookingmethod} and has ${this.nutritional}`)   
+            
+   }
    
+        }
+
+// **African Music Festival:** You're in charge of organizing a Pan-African music
+// festival. Many artists from different countries, each with their own musical style
+// and instruments, are scheduled to perform. You need to write a program to
+// manage the festival lineup, schedule, and stage arrangements. Think about how
+// you might model the `Artist`, `Performance`, and `Stage` classes, and consider
+// how you might use inheritance if there are different types of performances or
+// stages.
+
+class Music{
+    constructor(  ingredients,preparationtime,cookingmethod, nutritional,food){
+        this.ingredients =ingredients
+        this.preparationtime=preparationtime
+        this.cookingmethod =cookingmethod
+        this.nutritional=nutritional
+        this.food=food
+    }
+
+        cooks(){
+              
+            console.log(`the ${this.food} contaaint${this.ingredients} and take ${this.preparationtime} and ${this.cookingmethod} and has ${this.nutritional}`)   
+            
+   }
    
+        }
    
+
+
+// Create a class called Product with attributes for name, price, and quantity.
+// Implement a method to calculate the total value of the product (price * quantity).
+// Create multiple objects of the Product class and calculate their total values.
+
+class product{
+    constructor(  ingredients,preparationtime,cookingmethod, nutritional,food){
+        this.ingredients =ingredients
+        this.preparationtime=preparationtime
+        this.cookingmethod =cookingmethod
+        this.nutritional=nutritional
+        this.food=food
+    }
+
+        cooks(){
+              
+            console.log(`the ${this.food} contaaint${this.ingredients} and take ${this.preparationtime} and ${this.cookingmethod} and has ${this.nutritional}`)   
+            
+   }
+   
+        }
+   
+
+
+// Implement a class called Student with attributes for name, age, and grades (a
+// list of integers). Include methods to calculate the average grade, display the
+// student information, and determine if the student has passed (average grade >=
+// 60). Create objects for the Student class and demonstrate the usage of these
+// methods.
+
+class Student{
+    constructor(  ingredients,preparationtime,cookingmethod, nutritional,food){
+        this.ingredients =ingredients
+        this.preparationtime=preparationtime
+        this.cookingmethod =cookingmethod
+        this.nutritional=nutritional
+        this.food=food
+    }
+
+        cooks(){
+              
+            console.log(`the ${this.food} contaaint${this.ingredients} and take ${this.preparationtime} and ${this.cookingmethod} and has ${this.nutritional}`)   
+            
+   }
+   
+        }
+
+
+// Create a FlightBooking class that represents a flight booking system. Implement
+// methods to search for available flights based on destination and date, reserve
+// seats for customers, manage passenger information, and generate booking
+// confirmations.
+
+class FlightBooking{
+    constructor(  ingredients,preparationtime,cookingmethod, nutritional,food){
+        this.ingredients =ingredients
+        this.preparationtime=preparationtime
+        this.cookingmethod =cookingmethod
+        this.nutritional=nutritional
+        this.food=food
+    }
+
+        cooks(){
+              
+            console.log(`the ${this.food} contaaint${this.ingredients} and take ${this.preparationtime} and ${this.cookingmethod} and has ${this.nutritional}`)   
+            
+   }
+   
+        }
+
+
+// Create a LibraryCatalog class that handles the cataloging and management of
+// books in a library. Implement methods to add new books, search for books by
+// title or author, keep track of available copies, and display book details.
+
+
+class LibraryCatalog{
+    constructor(  ingredients,preparationtime,cookingmethod, nutritional,food){
+        this.ingredients =ingredients
+        this.preparationtime=preparationtime
+        this.cookingmethod =cookingmethod
+        this.nutritional=nutritional
+        this.food=food
+    }
+
+        cooks(){
+              
+            console.log(`the ${this.food} contaaint${this.ingredients} and take ${this.preparationtime} and ${this.cookingmethod} and has ${this.nutritional}`)   
+            
+   }
+   
+        }
