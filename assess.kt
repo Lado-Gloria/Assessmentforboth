@@ -67,3 +67,53 @@ class ProfessionalStoryteller(name: String, val experienceYears: Int) : StoryTel
 // create subclasses for different types of recipes (e.g., `MoroccanRecipe`,
 // `EthiopianRecipe`, `NigerianRecipe`), each with their own unique properties and
 // methods.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//**Wildlife Preservation:** You're a wildlife conservationist working on a
+//  program to track different species in a national park. Each species has its own
+//  characteristics and behaviors, such as its diet, typical lifespan, migration
+//  patterns, etc. Some species might be predators, others prey. You'll need to
+//  create classes to model `Species`, `Predator`, `Prey`, etc., and think about how
+//  these classes might relate to each other through inheritance.
+
+
+
+open class Species(val diet: String, val lifespan: Int)
+
+class Predator(diet: String, lifespan: Int, val huntingStyle: String) : Species(diet, lifespan)
+
+class Prey(diet: String, lifespan: Int, val migrationPattern: String) : Species(diet, lifespan)
+
+
+
+fun main (){
+    val lion = Predator("Carnivore", 15, "Ambush hunting")
+val zebra = Prey("Herbivore", 20, "Seasonal migration")
+
+println("Lion:")
+println("Diet: ${lion.diet}")
+println("Lifespan: ${lion.lifespan}")
+println("Hunting Style: ${lion.huntingStyle}")
+println()
+
+println("Zebra:")
+println("Diet: ${zebra.diet}")
+println("Lifespan: ${zebra.lifespan}")
+println("Migration Pattern: ${zebra.migrationPattern}")
+}
+

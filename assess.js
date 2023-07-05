@@ -155,7 +155,6 @@ class Recipe{
       
    
    const foods = new Recipe("salt","3time","boiled","high","okra")
-   console.log(stories)
    this.tasting
    const cookies=new MoroccanRecipe("yummy")
    console.log(cookies)
@@ -168,68 +167,107 @@ class Recipe{
 //  these classes might relate to each other through inheritance.
 
 
-class Wildlife{
-    constructor(  animals,diet,lifespan, migration,pattern){
-        this.animals =animals
-        this.diet=diet
-        this.lifespan=lifespan
-        this.migration=migration
-        this.pattern=pattern
+// class Wildlife{
+//     constructor(  animals,diet,lifespan, migration,pattern){
+//         this.animals =animals
+//         this.diet=diet
+//         this.lifespan=lifespan
+//         this.migration=migration
+//         this.pattern=pattern
+//     }
+
+//         working(){
+              
+//             console.log(`the ${this.animals} contaaint${this.lifespan} and take ${this.migration} and ${this.diet} and has ${this.pattern}`)   
+            
+//    }
+   
+//         }
+
+//         class Species extends Wildlife{
+//             constructor(  animals,diet,lifespan, migration,pattern,species){
+//                    super(  animals,diet,lifespan, migration,pattern)
+//                    this.species=species
+                  
+//                }
+//                longhair(){
+//                if ( `${this.hair}has ${this.lifespan} `)
+//                console.log(`the ${this.food} contaaint${this.ingredients} is ${this.species}` )
+                
+//            }
+              
+//            }
+
+//            class Predator extends Wildlife{
+//             constructor(  animals,diet,lifespan, migration,pattern,species){
+//                    super(  animals,diet,lifespan, migration,pattern)
+//                    this.species=species
+                  
+//                }
+//                longhair(){
+//                if ( `${this.hair}has ${this.lifespan} `)
+//                console.log(`the ${this.food} contaaint${this.ingredients} is ${this.species}` )
+                
+//            }
+              
+//            }
+//            class Prey extends Wildlife{
+//             constructor(  animals,diet,lifespan, migration,pattern,species){
+//                    super(  animals,diet,lifespan, migration,pattern)
+//                    this.species=species
+                  
+//                }
+//                longhair(){
+//                if ( `${this.hair}has ${this.lifespan} `)
+//                console.log(`the ${this.food} contaaint${this.ingredients} is ${this.species}` )
+                
+//            }
+              
+//            }
+
+
+
+class Species {
+    constructor(name ,diet, lifespan) {
+        this.diet = diet;
+        this.lifespan = lifespan;
+        this.name =name
+    }
+}
+
+class Predator extends Species {
+    constructor(name,diet, lifespan, huntingStyle) {
+        super(name,diet, lifespan);
+        this.huntingStyle = huntingStyle;
     }
 
-        working(){
-              
-            console.log(`the ${this.animals} contaaint${this.lifespan} and take ${this.migration} and ${this.diet} and has ${this.pattern}`)   
-            
-   }
-   
+    huntPrey(prey) {
+
+        console.log(`The ${this.name} is hunting the ${prey.name}!`);
+        if (prey.diet === "Herbivore") {
+            return `The ${this.name} successfully hunted the ${prey.name}!`;
+        } else {
+            return `The ${this.name} couldn't hunt the ${prey.name} because it's not a herbivore!`;
         }
+    }
+}
 
-        class Species extends Wildlife{
-            constructor(  animals,diet,lifespan, migration,pattern,species){
-                   super(  animals,diet,lifespan, migration,pattern)
-                   this.species=species
-                  
-               }
-               longhair(){
-               if ( `${this.hair}has ${this.lifespan} `)
-               console.log(`the ${this.food} contaaint${this.ingredients} is ${this.species}` )
-                
-           }
-              
-           }
+class Prey extends Species {
+    constructor(name,diet, lifespan, migrationPattern) {
+        super(name,diet, lifespan);
+        this.migrationPattern = migrationPattern;
+    }
+}
 
-           class Predator extends Wildlife{
-            constructor(  animals,diet,lifespan, migration,pattern,species){
-                   super(  animals,diet,lifespan, migration,pattern)
-                   this.species=species
-                  
-               }
-               longhair(){
-               if ( `${this.hair}has ${this.lifespan} `)
-               console.log(`the ${this.food} contaaint${this.ingredients} is ${this.species}` )
-                
-           }
-              
-           }
-           class Prey extends Wildlife{
-            constructor(  animals,diet,lifespan, migration,pattern,species){
-                   super(  animals,diet,lifespan, migration,pattern)
-                   this.species=species
-                  
-               }
-               longhair(){
-               if ( `${this.hair}has ${this.lifespan} `)
-               console.log(`the ${this.food} contaaint${this.ingredients} is ${this.species}` )
-                
-           }
-              
-           }
+const lion =new Predator("Lions","Canivorous",15,"Ambush hunting")
+const zebra = new Prey("Zebra","Herbivore", 20, "Seasonal migration");
+const gazelle = new Prey("gazelle","Herbivore", 10, "No migration");
 
+const result1 = lion.huntPrey(zebra);
+const result2 = lion.huntPrey(gazelle);
 
-
-           
-
+console.log(result1);
+console.log(result2);
 
 
 // **African Music Festival:** You're in charge of organizing a Pan-African music
@@ -240,64 +278,125 @@ class Wildlife{
 // how you might use inheritance if there are different types of performances or
 // stages.
 
-class Music{
-    constructor(  animals,diet,lifespan, migration,pattern){
-        this.animals =animals
-        this.diet=diet
-        this.lifespan=lifespan
-        this.migration=migration
-        this.pattern=pattern
-    }
+// class Music{
+//     constructor(  animals,diet,lifespan, migration,pattern){
+//         this.animals =animals
+//         this.diet=diet
+//         this.lifespan=lifespan
+//         this.migration=migration
+//         this.pattern=pattern
+//     }
 
-        working(){
+//         working(){
               
-            console.log(`the ${this.animals} contaaint${this.lifespan} and take ${this.migration} and ${this.diet} and has ${this.pattern}`)   
+//             console.log(`the ${this.animals} contaaint${this.lifespan} and take ${this.migration} and ${this.diet} and has ${this.pattern}`)   
             
-   }
+//    }
    
-        }
+//         }
 
-        class Artist extends Music{
-            constructor(  animals,diet,lifespan, migration,pattern,species){
-                   super(  animals,diet,lifespan, migration,pattern)
-                   this.species=species
+//         class Artist extends Music{
+//             constructor(  animals,diet,lifespan, migration,pattern,species){
+//                    super(  animals,diet,lifespan, migration,pattern)
+//                    this.species=species
                   
-               }
-               longhair(){
-               if ( `${this.hair}has ${this.lifespan} `)
-               console.log(`the ${this.food} contaaint${this.ingredients} is ${this.species}` )
+//                }
+//                longhair(){
+//                if ( `${this.hair}has ${this.lifespan} `)
+//                console.log(`the ${this.food} contaaint${this.ingredients} is ${this.species}` )
                 
-           }
+//            }
               
-           }
+//            }
 
-           class Performance extends Music{
-            constructor(  animals,diet,lifespan, migration,pattern,species){
-                   super(  animals,diet,lifespan, migration,pattern)
-                   this.species=species
+//            class Performance extends Music{
+//             constructor(  animals,diet,lifespan, migration,pattern,species){
+//                    super(  animals,diet,lifespan, migration,pattern)
+//                    this.species=species
                   
-               }
-               longhair(){
-               if ( `${this.hair}has ${this.lifespan} `)
-               console.log(`the ${this.food} contaaint${this.ingredients} is ${this.species}` )
+//                }
+//                longhair(){
+//                if ( `${this.hair}has ${this.lifespan} `)
+//                console.log(`the ${this.food} contaaint${this.ingredients} is ${this.species}` )
                 
-           }
+//            }
               
-           }
-           class Stage extends Music{
-            constructor(  animals,diet,lifespan, migration,pattern,species){
-                   super(  animals,diet,lifespan, migration,pattern)
-                   this.species=species
+//            }
+//            class Stage extends Music{
+//             constructor(  animals,diet,lifespan, migration,pattern,species){
+//                    super(  animals,diet,lifespan, migration,pattern)
+//                    this.species=species
                   
-               }
-               longhair(){
-               if ( `${this.hair}has ${this.lifespan} `)
-               console.log(`the ${this.food} contaaint${this.ingredients} is ${this.species}` )
+//                }
+//                longhair(){
+//                if ( `${this.hair}has ${this.lifespan} `)
+//                console.log(`the ${this.food} contaaint${this.ingredients} is ${this.species}` )
                 
-           }
+//            }
               
-           }
+//            }
 
+
+
+
+        //    4
+        //Create an AnimalShelter class that holds only dogs and cats. The shel
+
+        class Artist {
+            constructor(name, country, musicalStyle, instruments) {
+              this.name = name;
+              this.country = country;
+              this.musicalStyle = musicalStyle;
+              this.instruments = instruments;
+            }
+          }
+          
+          class Performance {
+            constructor(artist, stage, startTime, endTime) {
+              this.artist = artist;
+              this.stage = stage;
+              this.startTime = startTime;
+              this.endTime = endTime;
+            }
+          }
+          
+          class Stage {
+            constructor(name, capacity) {
+              this.name = name;
+              this.capacity = capacity;
+            }
+          }
+          
+          class MainStage extends Stage {
+            constructor(name, capacity, soundSystem) {
+              super(name, capacity);
+              this.soundSystem = soundSystem;
+            }
+          }
+          
+          class WorldStage extends Stage {
+            constructor(name, capacity, decorations) {
+              super(name, capacity);
+              this.decorations = decorations;
+            }
+          }
+          
+          const artist1 = new Artist("Salif Keita", "Mali", "World", ["kora", "balafon"]);
+          const artist2 = new Artist("Angelique Kidjo", "Benin", "Afropop", ["guitar", "vocals"]);
+          const artist3 = new Artist("Tinariwen", "Algeria", "Tamazight folk", ["guitar", "vocals"]);
+          
+          const mainStage = new MainStage("Main Stage", 10000, "High-quality speakers");
+          const worldStage = new WorldStage("World Stage", 5000, "Colorful banners");
+          
+          const performances = [
+            new Performance(artist1, mainStage, "12:00 PM", "1:00 PM"),
+            new Performance(artist2, worldStage, "2:00 PM", "3:00 PM"),
+            new Performance(artist3, mainStage, "4:00 PM", "5:00 PM"),
+          ];
+          
+          performances.forEach((performance) => {
+            console.log(`${performance.artist.name} - ${performance.stage.name} - ${performance.startTime} to ${performance.endTime}`);
+          });
 
 
 
@@ -305,23 +404,75 @@ class Music{
 // Implement a method to calculate the total value of the product (price * quantity).
 // Create multiple objects of the Product class and calculate their total values.
 
-class product{
-    constructor( ){
-        this.ingredients =ingredients
-        this.preparationtime=preparationtime
-        this.cookingmethod =cookingmethod
-        this.nutritional=nutritional
-        this.food=food
-    }
+// class product{
+//     constructor( ){
+//         this.ingredients =ingredients
+//         this.preparationtime=preparationtime
+//         this.cookingmethod =cookingmethod
+//         this.nutritional=nutritional
+//         this.food=food
+//     }
 
-        cooks(){
+//         cooks(){
               
-            console.log(`the ${this.food} contaaint${this.ingredients} and take ${this.preparationtime} and ${this.cookingmethod} and has ${this.nutritional}`)   
+//             console.log(`the ${this.food} contaaint${this.ingredients} and take ${this.preparationtime} and ${this.cookingmethod} and has ${this.nutritional}`)   
             
-   }
+//    }
    
-        }
+//         }
    
+
+        class Product {
+            constructor(name, price, quantity) {
+              this.name = name;
+              this.price = price;
+              this.quantity = quantity;
+            }
+          }
+          
+
+          const products = [
+            new Product("Apple", 0.5, 10),
+            new Product("Banana", 0.3, 15),
+            new Product("Orange", 0.4, 12)
+          ];
+          
+          let totalValue = 0;
+          for (let i = 0; i < products.length; i++) {
+            const product = products[i];
+            if (product.quantity > 0) {
+              totalValue += product.price * product.quantity;
+            }
+          }
+          
+        
+          console.log("Total value of all products:", totalValue);
+
+    class Products {
+            constructor(name, price, quantity) {
+              this.name = name;
+              this.price = price;
+              this.quantity = quantity;
+            }
+          }
+          
+          // Creating an array of Product instances
+          const product = [
+            new Product("Apple", 0.5, 10),
+            new Product("Banana", 0.3, 15),
+            new Product("Orange", 0.4, 12)
+          ];
+          
+          // Calculating the total values using logical AND (&&) and logical OR (||) operators
+          let totalValues = 0;
+          for (let i = 0; i < products.length; i++) {
+            const product = products[i];
+            totalValue += (product.quantity > 0 && product.price > 0) ? (product.price * product.quantity) : 0;
+          }
+          
+          // Printing the total value
+          console.log("Total value of all products:", totalValue);
+
 
 
 // Implement a class called Student with attributes for name, age, and grades (a
@@ -348,27 +499,10 @@ class Student{
         }
 
 
-// Create a FlightBooking class that represents a flight booking system. Implement
-// methods to search for available flights based on destination and date, reserve
-// seats for customers, manage passenger information, and generate booking
-// confirmations.
 
-class FlightBooking{
-    constructor(  ingredients,preparationtime,cookingmethod, nutritional,food){
-        this.ingredients =ingredients
-        this.preparationtime=preparationtime
-        this.cookingmethod =cookingmethod
-        this.nutritional=nutritional
-        this.food=food
-    }
 
-        cooks(){
-              
-            console.log(`the ${this.food} contaaint${this.ingredients} and take ${this.preparationtime} and ${this.cookingmethod} and has ${this.nutritional}`)   
-            
-   }
-   
-        }
+
+        
 
 
 // Create a LibraryCatalog class that handles the cataloging and management of
@@ -392,3 +526,142 @@ class LibraryCatalog{
    }
    
         }
+
+
+// question6
+   class Students {
+  constructor(name, age, grades) {
+    this.name = name;
+    this.age = age;
+    this.grades = grades;
+  }
+
+  calculateAverageGrade() {
+    let sum = 0;
+    for (let i = 0; i < this.grades.length; i++) {
+      sum += this.grades[i];
+    }
+    return sum / this.grades.length;
+  }
+
+  hasPassed() {
+    const averageGrade = this.calculateAverageGrade();
+    if (this.grades.length === 0) {
+      return false;
+    } else if (averageGrade >= 60 && this.grades.length >= 4) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+
+  displayHighestGrade() {
+    const highestGrade = Math.max(...this.grades);
+    console.log("Highest Grade:", highestGrade);
+  }
+}
+
+const students = [
+  new Students("John Doe", 18, [80, 75, 90]),
+  new Students("Jane Doe", 19, [70, 85, 65]),
+  new Students("Alice Smith", 20, [90, 80, 95])
+];
+
+for (let student of students) {
+  console.log("Student information:");
+  console.log("Name:", student.name);
+  console.log("Age:", student.age);
+  console.log("Grades:", student.grades);
+  const averageGrade = student.calculateAverageGrade();
+  console.log("Average Grade:", averageGrade);
+
+  const passingStatus = averageGrade >= 60 ? "Passed" : "Failed";
+  console.log("Passing Status:", passingStatus);
+
+  student.displayHighestGrade();
+
+  console.log();
+}
+
+
+// 
+// Create a FlightBooking class that represents a flight booking system. Implement
+// methods to search for available flights based on destination and date, reserve
+// seats for customers, manage passenger information, and generate booking
+// confirmations.
+
+class PassengerDetails {
+  constructor(name, email) {
+    this.name = name;
+    this.email = email;
+  }
+
+  updateInformation(email, phone) {
+    this.email = email;
+    this.phone = phone;
+  }
+}
+
+class FlightBooking {
+  constructor(destination, date, capacity) {
+    this.destination = destination;
+    this.date = date;
+    this.capacity = capacity;
+    this.passengers = [];
+    this.flights = [];
+  }
+
+  searchFlights(destination, date) {
+    const availableFlights = [];
+    for (const flight of this.flights) {
+      if (flight.destination === destination && flight.date === date) {
+        availableFlights.push(flight);
+      }
+    }
+    return availableFlights;
+  }
+
+  reserveSeat(passenger) {
+    if (this.passengers.length < this.capacity) {
+      this.passengers.push(passenger);
+      return true;
+    } else {
+      return false;
+    }
+  }
+
+  managePassengerInformation(updatedPassenger) {
+    for (const passenger of this.passengers) {
+      if (passenger.name === updatedPassenger.name) {
+        passenger.updateInformation(updatedPassenger.email, updatedPassenger.phone);
+        return true;
+      }
+    }
+    return false;
+  }
+
+  generateBookingConfirmation(passenger) {
+    for (const p of this.passengers) {
+      if (p.name === passenger.name) {
+        return `Booking confirmation for ${p.name} on ${this.date} to ${this.destination}`;
+      }
+    }
+    return "Passenger not found";
+  }
+}
+
+const flightBooking = new FlightBooking("Tanzania", "2023-04-30", 90);
+const availableFlights = flightBooking.searchFlights("Uganda", "2022-03-20");
+console.log(availableFlights);
+
+const passenger1 = new PassengerDetails("Nkatha", "nkatha@gmail.com");
+const reservationStatus = flightBooking.reserveSeat(passenger1);
+console.log(reservationStatus);
+
+const passenger2 = new PassengerDetails("Mily", "milly@gmail.com");
+passenger2.updateInformation("milly@gmail.com", "1234567890");
+const updateStatus = flightBooking.managePassengerInformation(passenger2);
+console.log(updateStatus);
+
+const bookingConfirmation = flightBooking.generateBookingConfirmation(passenger1);
+console.log(bookingConfirmation);
